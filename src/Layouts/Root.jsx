@@ -2,7 +2,7 @@ import Home from "../Pages/Home/Home"
 
 function Root() {
   return (
-    <div>
+    <div className="font-poppins max-w-6xl mx-auto">
       <Home/>
     </div>
   )
