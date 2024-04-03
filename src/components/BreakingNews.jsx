@@ -7,12 +7,12 @@ function BreakingNews() {
       <Button size="md" color="pink">
         Latest
       </Button>
-      <p className="text-lg text-[#403F3F] font-semibold">
+      <div className="text-lg text-[#403F3F] font-semibold">
         <Marquee speed={100}>
           I can be a React component, multiple React components, or just some
           text.
         </Marquee>
-      </p>
+      </div>
     </div>
   );
 }
