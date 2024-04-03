@@ -2,6 +2,9 @@ import { Button } from '@material-tailwind/react';
 import { FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
+import qzone1 from '../../../assets/qZone1.png'
+import qzone2 from '../../../assets/qZone2.png'
+import qzone3 from '../../../assets/qZone3.png'
 function RightSection() {
   return (
     <div>
@@ -40,6 +43,12 @@ function RightSection() {
           <FaInstagram className="text-[#D82D7E]" />
           <p className="text-sm text-[#706F6F] font-medium ">Instagram</p>
         </div>
+      </div>
+    <h2 className="text-base font-semibold text-[#403F3F]">Q Zone</h2>
+      <div>
+        <img src={qzone1} alt="" />
+        <img src={qzone2} alt="" />
+        <img src={qzone3} alt="" />
       </div>
     </div>
   );
