@@ -1,7 +1,10 @@
+import TopBar from "../../components/TopBar"
 
 function Home() {
   return (
-    <div>Home...</div>
+    <div>
+      <TopBar/>
+    </div>
   )
 }
 
