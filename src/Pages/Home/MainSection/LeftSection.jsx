@@ -7,9 +7,9 @@ function LeftSection() {
   return (
     <div>
       {categories.map(category => (
-        <div key={category.id} className="text-lg font-medium text-[#9F9F9F]">
+        <div key={category.id} className="text-md font-medium text-[#9F9F9F]">
           <NavLink
-            // className={({ isActive }) => (isActive ? 'py-4 bg-[#E7E7E7]' : 'bg-[#fff]')}
+          // className={({ isActive }) => (isActive ? 'py-4 bg-[#E7E7E7]' : 'bg-[#fff]')}
           >
             {category.name}
           </NavLink>
