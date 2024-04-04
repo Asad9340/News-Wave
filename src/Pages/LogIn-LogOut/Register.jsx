@@ -91,7 +91,7 @@ function Register() {
                 />
               </div>
               <Button type="submit" className="w-full mt-3 cursor-pointer">
-                Login
+                Register
               </Button>
             </form>
             <p className="mt-2">
