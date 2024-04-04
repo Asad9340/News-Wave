@@ -2,15 +2,28 @@ import { Button } from '@material-tailwind/react';
 import { FaGoogle, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import qzone1 from '../../../assets/qZone1.png'
-import qzone2 from '../../../assets/qZone2.png'
-import qzone3 from '../../../assets/qZone3.png'
+import qzone1 from '../../../assets/qZone1.png';
+import qzone2 from '../../../assets/qZone2.png';
+import qzone3 from '../../../assets/qZone3.png';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Firebase/AuthProvider';
+
 function RightSection() {
+  const { googleSignIn,setUser } = useContext(AuthContext);
+  const handleGoogleLogIn = () => {
+    googleSignIn()
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
+      })
+      .catch(error => console.log(error));
+  };
   return (
     <div>
       <h2>Login With</h2>
       <div className="flex gap-2 flex-col mt-4">
         <Button
+          onClick={handleGoogleLogIn}
           size="sm"
           variant="outlined"
           color="blue"
@@ -44,7 +57,7 @@ function RightSection() {
           <p className="text-sm text-[#706F6F] font-medium ">Instagram</p>
         </div>
       </div>
-    <h2 className="text-base font-semibold text-[#403F3F]">Q Zone</h2>
+      <h2 className="text-base font-semibold text-[#403F3F]">Q Zone</h2>
       <div>
         <img src={qzone1} alt="" />
         <img src={qzone2} alt="" />

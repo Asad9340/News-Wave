@@ -3,7 +3,6 @@ import { FaShareAlt } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
 
 function SingleNews({ news }) {
-  console.log(news);
   const { author, title, image_url, details, total_view, rating } = news;
   return (
     <div className="border mb-6 rounded-lg">
@@ -96,7 +95,7 @@ function SingleNews({ news }) {
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    class="w-6 h-6 cursor-pointer text-blue-gray-500"
+                    className="w-6 h-6 cursor-pointer text-blue-gray-500"
                   >
                     <path
                       strokeLinecap="round"
