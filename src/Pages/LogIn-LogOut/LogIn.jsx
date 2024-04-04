@@ -10,7 +10,9 @@ function LogIn() {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    logInUser(email, password);
+    logInUser(email, password)
+      .then(result => console.log(result.user))
+      .catch(err => console.log(err.message));
   };
   return (
     <>
@@ -19,6 +21,12 @@ function LogIn() {
         <div className="max-w-xl py-6 px-8 h-80 mt-20 bg-white rounded-lg mx-auto shadow-xl">
           <form onSubmit={handleLogInSubmit}>
             <div className="mb-6">
+              <label
+                htmlFor="email"
+                className="text-base text-[#403F3F] font-semibold mb-2 pl-1 "
+              >
+                Email address
+              </label>
               <Input
                 variant="outlined"
                 label="Email"
@@ -27,10 +35,15 @@ function LogIn() {
                 type="email"
                 name="email"
                 id="email"
-                className="text-2xl"
               />
             </div>
             <div>
+              <label
+                htmlFor="password"
+                className="text-base text-[#403F3F] font-semibold mb-2 pl-1 "
+              >
+                Password
+              </label>
               <Input
                 variant="outlined"
                 label="Password"
