@@ -3,7 +3,6 @@ import useCategories from '../../../Hooks/useCategories';
 
 function LeftSection() {
   const categories = useCategories();
-  console.log(categories);
   return (
     <div>
       {categories.map(category => (
