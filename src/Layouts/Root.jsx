@@ -1,10 +1,10 @@
 
-import Home from "../Pages/Home/Home"
+import { Outlet } from "react-router-dom"
 
 function Root() {
   return (
     <div className="font-poppins max-w-6xl mx-auto">
-      <Home/>
+      <Outlet/>
     </div>
   )
 }

@@ -7,9 +7,10 @@ import qzone2 from '../../../assets/qZone2.png';
 import qzone3 from '../../../assets/qZone3.png';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Firebase/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 function RightSection() {
-  const { googleSignIn,setUser } = useContext(AuthContext);
+  const { googleSignIn, setUser } = useContext(AuthContext);
   const handleGoogleLogIn = () => {
     googleSignIn()
       .then(result => {
@@ -17,6 +18,17 @@ function RightSection() {
         setUser(result.user);
       })
       .catch(error => console.log(error));
+    toast.success('LogIn Successfully.', {
+      style: {
+        border: '1px solid #713200',
+        padding: '16px',
+        color: '#713200',
+      },
+      iconTheme: {
+        primary: '#713200',
+        secondary: '#FFFAEE',
+      },
+    });
   };
   return (
     <div>
@@ -63,6 +75,7 @@ function RightSection() {
         <img src={qzone2} alt="" />
         <img src={qzone3} alt="" />
       </div>
+      <Toaster position="top-right" reverseOrder={true} />
     </div>
   );
 }
