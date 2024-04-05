@@ -27,7 +27,7 @@ function SingleNews({ news }) {
       </div>
       <div className="space-y-4">
         <h2 className="text-xl text-[#403F3F] font-bold px-4 my-4 ">{title}</h2>
-        <img src={image_url} alt="" />
+        <img className='w-full' src={image_url} alt="" />
         <div className="text-base text-[#706F6F] font-semibold px-4">
           {details.length > 300 ? (
             location.pathname === '/singleNewsDetails' ? (
