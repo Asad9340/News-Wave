@@ -22,10 +22,10 @@ function AuthProvider({ children }) {
 
   const gitHubLogIn = () => {
     return signInWithPopup(auth, GitHubProvider);
-  }
+  };
 
   const logOut = () => {
-    setLoading(true);
+    setUser(null);
     return signOut(auth);
   };
 

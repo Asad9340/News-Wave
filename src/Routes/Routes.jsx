@@ -6,6 +6,7 @@ import About from "../components/About";
 import Career from './../components/Career';
 import LogIn from "../Pages/LogIn-LogOut/LogIn";
 import Register from "../Pages/LogIn-LogOut/Register";
+import SingleNewsDetails from "../components/SingleNewsDetails";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element:<Register/>
+      },
+      {
+        path: '/singleNewsDetails',
+        element:<SingleNewsDetails/>
       }
     ]
   }

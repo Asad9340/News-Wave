@@ -20,14 +20,17 @@ function RightSection() {
       .catch(error => console.log(error));
     toast.success('Google LogIn successfully');
   };
-  const handleGitHubLogIn = () => {
+  const handleGitHubLogIn =()=> {
     gitHubLogIn()
-      .then(result => console.log(result.user))
+      .then(result => {
+        console.log(result.user);
+        setUser(result.user);
+      })
       .catch(error => console.log(error));
   };
 
   return (
-    <div>
+    <div className='ml-0 md:ml-4'>
       <h2>Login With</h2>
       <div className="flex gap-2 flex-col mt-4">
         <Button

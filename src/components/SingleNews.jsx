@@ -1,8 +1,12 @@
 import { FaBookmark } from 'react-icons/fa';
 import { FaShareAlt } from 'react-icons/fa';
 import { FaEye } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 function SingleNews({ news }) {
+  const location = useLocation();
+  console.log(location);
   const { author, title, image_url, details, total_view, rating } = news;
   return (
     <div className="border mb-6 rounded-lg">
@@ -24,9 +28,25 @@ function SingleNews({ news }) {
       <div className="space-y-4">
         <h2 className="text-xl text-[#403F3F] font-bold px-4 my-4 ">{title}</h2>
         <img src={image_url} alt="" />
-        <p className="text-base text-[#706F6F] font-semibold px-4">
-          {details.length > 300 ? details.slice(0, 300) : details}
-        </p>
+        <div className="text-base text-[#706F6F] font-semibold px-4">
+          {details.length > 300 ? (
+            location.pathname === '/singleNewsDetails' ? (
+              details
+            ) : (
+              <p>
+                {details.slice(0, 300)}{' '}
+                <Link
+                  to="/singleNewsDetails"
+                  className="text-blue-500 cursor-pointer "
+                >
+                  Read more...
+                </Link>
+              </p>
+            )
+          ) : (
+            details
+          )}
+        </div>
         <hr className="mx-6" />
         <div className="flex gap-3 justify-between px-3 items-center">
           <div className="flex items-center mb-6">

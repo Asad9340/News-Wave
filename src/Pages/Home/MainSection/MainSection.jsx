@@ -4,7 +4,7 @@ import RightSection from "./RightSection"
 
 function MainSection() {
   return (
-    <div className="grid gap-4 grid-cols-4 my-6">
+    <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 my-6">
       <div>
       <LeftSection />
       </div>
