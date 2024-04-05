@@ -10,7 +10,7 @@ import { AuthContext } from '../../../Firebase/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 function RightSection() {
-  const { googleSignIn, setUser } = useContext(AuthContext);
+  const { googleSignIn, setUser, gitHubLogIn } = useContext(AuthContext);
   const handleGoogleLogIn = () => {
     googleSignIn()
       .then(result => {
@@ -18,18 +18,14 @@ function RightSection() {
         setUser(result.user);
       })
       .catch(error => console.log(error));
-    toast.success('LogIn Successfully.', {
-      style: {
-        border: '1px solid #713200',
-        padding: '16px',
-        color: '#713200',
-      },
-      iconTheme: {
-        primary: '#713200',
-        secondary: '#FFFAEE',
-      },
-    });
+    toast.success('Google LogIn successfully');
   };
+  const handleGitHubLogIn = () => {
+    gitHubLogIn()
+      .then(result => console.log(result.user))
+      .catch(error => console.log(error));
+  };
+
   return (
     <div>
       <h2>Login With</h2>
@@ -45,6 +41,7 @@ function RightSection() {
           Login with Google
         </Button>
         <Button
+          onClick={handleGitHubLogIn}
           size="sm"
           variant="outlined"
           color="black"
