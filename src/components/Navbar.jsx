@@ -30,7 +30,7 @@ function Navbar() {
     setUser(null);
   }
   return (
-    <div className="grid gap-4 grid-cols-3 my-6 mx-4 items-center">
+    <div className="flex lg:grid gap-4 grid-cols-3 my-6 mx-4 items-center">
       <div></div>
       <div className="flex gap-4 lg:gap-6 justify-center">
         <NavLink

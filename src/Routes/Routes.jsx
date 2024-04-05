@@ -1,45 +1,50 @@
-import { createBrowserRouter } from "react-router-dom";
-import Root from "../Layouts/Root";
-import Error from "../Pages/Error/Error";
-import Home from "../Pages/Home/Home";
-import About from "../components/About";
+import { createBrowserRouter } from 'react-router-dom';
+import Root from '../Layouts/Root';
+import Error from '../Pages/Error/Error';
+import Home from '../Pages/Home/Home';
+import About from '../components/About';
 import Career from './../components/Career';
-import LogIn from "../Pages/LogIn-LogOut/LogIn";
-import Register from "../Pages/LogIn-LogOut/Register";
-import SingleNewsDetails from "../components/SingleNewsDetails";
+import LogIn from '../Pages/LogIn-LogOut/LogIn';
+import Register from '../Pages/LogIn-LogOut/Register';
+import SingleNewsDetails from '../components/SingleNewsDetails';
+import PrivateRoute from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: '/',
     errorElement: <Error />,
-    element: <Root/>,
+    element: <Root />,
     children: [
       {
         path: '/',
-        element:<Home/>
+        element: <Home />,
       },
       {
         path: '/about',
-        element:<About/>
+        element: <About />,
       },
       {
         path: '/career',
-        element:<Career/>
+        element: <Career />,
       },
       {
         path: '/login',
-        element:<LogIn/>
+        element: <LogIn />,
       },
       {
         path: '/register',
-        element:<Register/>
+        element: <Register />,
       },
       {
         path: '/singleNewsDetails',
-        element:<SingleNewsDetails/>
-      }
-    ]
-  }
-])
+        element: (
+          <PrivateRoute>
+            <SingleNewsDetails />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+]);
 
 export default router;
