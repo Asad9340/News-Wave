@@ -39,7 +39,7 @@ function SingleNews({ news }) {
                   to="/singleNewsDetails"
                   className="text-blue-500 cursor-pointer "
                 >
-                  Read more...
+                  Read More...
                 </Link>
               </p>
             )
